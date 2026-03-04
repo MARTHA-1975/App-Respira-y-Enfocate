@@ -1,0 +1,9 @@
+RespiraApp/
+├── App.js
+├── package.json
+├── /assets
+│   └── (iconos, sonidos opcionales)
+├── /components
+│   └── BreathingCircle.js
+└── /screens
+    └── HomeScreen.js
