@@ -1,0 +1,14 @@
+🚀 Cómo iniciar
+Clona el repositorio en GitHub.
+
+Instala dependencias con npm install o yarn install.
+
+Ejecuta con npx react-native run-android o npx react-native run-ios.
+
+Este boilerplate ya te da:
+
+Una pantalla inicial con botón Respirar.
+
+Una animación de círculo que sigue el ciclo 4‑2‑6.
+
+El mantra final en pantalla.
