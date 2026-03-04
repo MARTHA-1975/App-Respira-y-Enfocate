@@ -1,0 +1,29 @@
+import React, { useEffect, useRef } from 'react';
+import { Animated, View, Text, StyleSheet } from 'react-native';
+
+export default function BreathingCircle() {
+  const scaleAnim = useRef(new Animated.Value(1)).current;
+
+  useEffect(() => {
+    const cycle = Animated.sequence([
+      Animated.timing(scaleAnim, { toValue: 1.5, duration: 4000, useNativeDriver: true }), // inhalar
+      Animated.timing(scaleAnim, { toValue: 1.5, duration: 2000, useNativeDriver: true }), // pausa
+      Animated.timing(scaleAnim, { toValue: 1, duration: 6000, useNativeDriver: true }) // exhalar
+    ]);
+
+    Animated.loop(cycle).start();
+  }, [scaleAnim]);
+
+  return (
+    <View style={styles.container}>
+      <Animated.View style={[styles.circle, { transform: [{ scale: scaleAnim }] }]} />
+      <Text style={styles.mantra}>Estoy presente, estoy enfocado, estoy en paz</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: { flex: 1, justifyContent: 'center', alignItems: 'center' },
+  circle: { width: 150, height: 150, borderRadius: 75, backgroundColor: '#4CAF50' },
+  mantra: { marginTop: 30, fontSize: 16, textAlign: 'center' }
+});
